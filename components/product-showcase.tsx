@@ -44,7 +44,7 @@ export function ProductShowcase() {
             </div>
             <div className="relative aspect-square rounded-2xl overflow-hidden bg-accent col-span-2">
               <Image
-                src="https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/washbuckler/product%20shothq.png"
+                src="https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/washbuckler/packagingoncounter.jpeg"
                 alt="Washbuckler in Action"
                 fill
                 className="object-cover"

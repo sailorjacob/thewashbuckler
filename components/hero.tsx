@@ -64,7 +64,7 @@ export function Hero() {
           <div className="relative">
             <div className="relative aspect-square rounded-3xl overflow-hidden bg-gradient-to-br from-primary/20 to-secondary/20 p-8">
               <Image
-                src="https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/washbuckler/packagingoncounter.jpeg"
+                src="https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/washbuckler/product%20shothq.png"
                 alt="The Washbuckler Sink Splash Guard"
                 fill
                 className="object-contain"
