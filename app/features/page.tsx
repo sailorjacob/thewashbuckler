@@ -2,6 +2,9 @@ import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { Shield, Droplets, Sparkles, Zap, Heart, Leaf } from "lucide-react"
 
+// Force dynamic rendering to avoid client component serialization issues
+export const dynamic = 'force-dynamic'
+
 export default function FeaturesPage() {
   const features = [
     {

@@ -5,6 +5,9 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 
+// Force dynamic rendering to avoid client component serialization issues
+export const dynamic = 'force-dynamic'
+
 export default function ContactPage() {
   return (
     <div className="min-h-screen flex flex-col">

@@ -2,6 +2,9 @@ import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { Star } from "lucide-react"
 
+// Force dynamic rendering to avoid client component serialization issues
+export const dynamic = 'force-dynamic'
+
 export default function ReviewsPage() {
   const reviews = [
     {

@@ -2,7 +2,10 @@ import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
 import { Check, Shield, Droplets, Sparkles } from "lucide-react"
-import Image from "next/image"
+import { SafeImage } from "@/components/ui/safe-image"
+
+// Force dynamic rendering to avoid client component serialization issues
+export const dynamic = 'force-dynamic'
 
 export default function ProductPage() {
   return (
@@ -32,8 +35,9 @@ export default function ProductPage() {
                 </div>
               </div>
               <div className="relative h-[400px] lg:h-[500px]">
-                <Image
+                <SafeImage
                   src="https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/washbuckler/packagingoncounter.jpeg"
+                  fallbackSrc="/placeholder.jpg"
                   alt="The Washbuckler Sink Splash Guard"
                   fill
                   className="object-contain"

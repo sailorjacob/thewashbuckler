@@ -8,6 +8,9 @@ import { Suspense } from "react"
 import { CartProvider } from "@/components/cart-context"
 import { CartDrawer } from "@/components/cart-drawer"
 
+// Force dynamic rendering for all pages to avoid client component serialization issues
+export const dynamic = 'force-dynamic'
+
 export const metadata: Metadata = {
   title: "The Washbuckler™ - Sink Splash Guard | Keep Your Kitchen Dry",
   description:

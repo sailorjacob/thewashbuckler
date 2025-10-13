@@ -3,7 +3,7 @@
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Menu, X, ShoppingCart } from "lucide-react"
-import Image from "next/image"
+import { SafeImage } from "@/components/ui/safe-image"
 import { useCart } from "./cart-context"
 
 export function Header() {
@@ -21,8 +21,9 @@ export function Header() {
           {/* Logo */}
           <div className="flex items-center">
             <a href="/">
-              <Image
+              <SafeImage
                 src="https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs/washbucklerlogo.png"
+                fallbackSrc="/placeholder-logo.svg"
                 alt="The Washbuckler"
                 width={180}
                 height={50}

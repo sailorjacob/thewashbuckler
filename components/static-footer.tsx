@@ -1,18 +1,15 @@
-"use client"
-
-import { SafeImage } from "@/components/ui/safe-image"
+import Image from "next/image"
 import { Facebook, Instagram, Twitter, Mail } from "lucide-react"
 
-export function Footer() {
+export function StaticFooter() {
   return (
     <footer className="bg-muted/30 border-t border-border">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid md:grid-cols-4 gap-8 mb-8">
           {/* Brand */}
           <div className="space-y-4">
-            <SafeImage
+            <Image
               src="https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs/washbucklerlogo.png"
-              fallbackSrc="/placeholder-logo.svg"
               alt="The Washbuckler"
               width={160}
               height={45}

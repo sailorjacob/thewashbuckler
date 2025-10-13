@@ -1,10 +1,13 @@
-import { Header } from "@/components/header"
-import { Footer } from "@/components/footer"
+import { StaticHeader } from "@/components/static-header"
+import { StaticFooter } from "@/components/static-footer"
+
+// Force dynamic rendering to avoid client component serialization issues
+export const dynamic = 'force-dynamic'
 
 export default function PrivacyPage() {
   return (
     <div className="min-h-screen flex flex-col">
-      <Header />
+      <StaticHeader />
       <main className="flex-1">
         {/* Hero */}
         <section className="py-20 bg-gradient-to-b from-background to-muted/30">
@@ -125,7 +128,7 @@ export default function PrivacyPage() {
           </div>
         </section>
       </main>
-      <Footer />
+      <StaticFooter />
     </div>
   )
 }

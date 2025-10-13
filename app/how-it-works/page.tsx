@@ -3,6 +3,9 @@ import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
 
+// Force dynamic rendering to avoid client component serialization issues
+export const dynamic = 'force-dynamic'
+
 export default function HowItWorksPage() {
   const steps = [
     {

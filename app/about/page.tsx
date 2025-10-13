@@ -1,12 +1,15 @@
-import { Header } from "@/components/header"
-import { Footer } from "@/components/footer"
+import { StaticHeader } from "@/components/static-header"
+import { StaticFooter } from "@/components/static-footer"
 import { Heart, Users, Lightbulb, Award } from "lucide-react"
-import Image from "next/image"
+import { SafeImage } from "@/components/ui/safe-image"
+
+// Force dynamic rendering to avoid client component serialization issues
+export const dynamic = 'force-dynamic'
 
 export default function AboutPage() {
   return (
     <div className="min-h-screen flex flex-col">
-      <Header />
+      <StaticHeader />
       <main className="flex-1">
         {/* Hero */}
         <section className="py-20 bg-gradient-to-b from-background to-muted/30">
@@ -45,8 +48,9 @@ export default function AboutPage() {
                 </div>
               </div>
               <div className="relative h-[400px] rounded-lg overflow-hidden">
-                <Image
+                <SafeImage
                   src="https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/washbuckler/attachhed%20to%20sink.jpeg"
+                  fallbackSrc="/placeholder.jpg"
                   alt="Our Story"
                   fill
                   className="object-cover"
@@ -97,7 +101,7 @@ export default function AboutPage() {
           </div>
         </section>
       </main>
-      <Footer />
+      <StaticFooter />
     </div>
   )
 }
