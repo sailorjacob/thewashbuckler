@@ -1,7 +1,8 @@
+"use client"
+
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Check } from "lucide-react"
-;("use client")
 import { useCart } from "./cart-context"
 
 const benefits = [
