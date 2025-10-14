@@ -18,10 +18,6 @@ export function Hero() {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Column - Content */}
           <div className="space-y-8">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium">
-              <Star className="h-4 w-4 fill-current" />
-              <span>Rated 4.9/5 by Happy Customers</span>
-            </div>
 
             <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-balance">
               Say Goodbye to <span className="text-primary">Kitchen Sink Splashes</span>

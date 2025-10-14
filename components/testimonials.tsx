@@ -1,5 +1,4 @@
 import { Card } from "@/components/ui/card"
-import { Star } from "lucide-react"
 
 const testimonials = [
   {
@@ -39,11 +38,12 @@ export function Testimonials() {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {testimonials.map((testimonial, index) => (
             <Card key={index} className="p-8 hover:shadow-lg transition-shadow">
-              <div className="flex gap-1 mb-4">
+              {/* Rating stars temporarily hidden */}
+              {/* <div className="flex gap-1 mb-4">
                 {[...Array(testimonial.rating)].map((_, i) => (
                   <Star key={i} className="h-5 w-5 fill-secondary text-secondary" />
                 ))}
-              </div>
+              </div> */}
               <p className="text-foreground leading-relaxed mb-6">"{testimonial.content}"</p>
               <div>
                 <div className="font-semibold">{testimonial.name}</div>
