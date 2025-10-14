@@ -9,7 +9,7 @@ export function StaticFooter() {
           {/* Brand */}
           <div className="space-y-4">
             <Image
-              src="https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs/washbucklerlogo.png"
+              src="https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/washbuckler/logooutline.png"
               alt="The Washbuckler"
               width={160}
               height={45}

@@ -9,7 +9,7 @@ export function StaticHeader() {
           <div className="flex items-center">
             <a href="/">
               <Image
-                src="https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs/washbucklerlogo.png"
+                src="https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/washbuckler/logooutline.png"
                 alt="The Washbuckler"
                 width={180}
                 height={50}

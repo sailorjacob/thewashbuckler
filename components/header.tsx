@@ -22,7 +22,7 @@ export function Header() {
           <div className="flex items-center">
             <a href="/">
               <SafeImage
-                src="https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs/washbucklerlogo.png"
+                src="https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/washbuckler/logooutline.png"
                 fallbackSrc="/placeholder-logo.svg"
                 alt="The Washbuckler"
                 width={180}
