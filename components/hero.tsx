@@ -37,7 +37,7 @@ export function Hero() {
                 Shop Now - $29.99
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
-              <Button size="lg" variant="outline" className="font-semibold text-lg px-8 py-6 bg-transparent">
+              <Button size="lg" variant="outline" className="hidden sm:flex font-semibold text-lg px-8 py-6 bg-transparent">
                 Watch Demo
               </Button>
             </div>
