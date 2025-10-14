@@ -35,6 +35,7 @@ export function Hero() {
                 onClick={handleShopNow}
               >
                 Shop Now
+                <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
               {/* Watch Demo button temporarily hidden */}
               {/* <Button size="lg" variant="outline" className="font-semibold text-lg px-8 py-6 bg-transparent">
