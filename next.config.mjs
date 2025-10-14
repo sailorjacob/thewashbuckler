@@ -18,7 +18,7 @@ const nextConfig = {
     formats: ['image/webp', 'image/avif'],
   },
   serverExternalPackages: ['@radix-ui/react-accordion', '@radix-ui/react-slot'],
-  // Disable static optimization for pages that use client components
+  // Force dynamic rendering for API routes to prevent build-time execution
   output: 'standalone',
 }
 

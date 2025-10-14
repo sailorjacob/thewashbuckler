@@ -1,6 +1,9 @@
 import { NextRequest, NextResponse } from "next/server"
 import Stripe from "stripe"
 
+// Force dynamic rendering for webhook routes
+export const dynamic = 'force-dynamic'
+
 export async function POST(request: NextRequest) {
   // Initialize Stripe only when the webhook is called, not during build
   if (!process.env.STRIPE_SECRET_KEY || !process.env.STRIPE_WEBHOOK_SECRET) {
