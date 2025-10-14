@@ -27,7 +27,7 @@ export default function ProductPage() {
                 </p>
                 <div className="flex flex-wrap gap-4">
                   <Button size="lg" className="btn-iridescent text-foreground font-semibold">
-                    Order Now
+                    Order Now - $29.99
                   </Button>
                   {/* Watch Demo button temporarily hidden */}
                   {/* <Button size="lg" variant="outline">

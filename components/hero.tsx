@@ -34,7 +34,7 @@ export function Hero() {
                 className="btn-iridescent text-foreground font-semibold text-lg px-8 py-6"
                 onClick={handleShopNow}
               >
-                Shop Now
+                Shop Now - $29.99
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
               {/* Watch Demo button temporarily hidden */}
