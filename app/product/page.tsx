@@ -29,7 +29,7 @@ export default function ProductPage() {
                   <Button size="lg" className="btn-iridescent text-foreground font-semibold">
                     Order Now - $29.99
                   </Button>
-                  <Button size="lg" variant="outline" className="hidden sm:inline-flex">
+                  <Button size="lg" variant="outline">
                     Watch Demo
                   </Button>
                 </div>
