@@ -34,7 +34,7 @@ export function CTA() {
           </div>
 
           {/* Trust Badges */}
-          <div className="grid sm:grid-cols-3 gap-8 pt-12">
+          <div className="grid sm:grid-cols-2 gap-8 pt-12 max-w-md mx-auto">
             <div className="flex flex-col items-center gap-3">
               <div className="h-12 w-12 rounded-full icon-iridescent flex items-center justify-center">
                 <Truck className="h-6 w-6 text-primary" />
@@ -49,14 +49,6 @@ export function CTA() {
               <div className="font-semibold">30-Day Returns</div>
               <div className="text-sm text-muted-foreground">Money-back guarantee</div>
             </div>
-            {/* Warranty section temporarily hidden */}
-            {/* <div className="flex flex-col items-center gap-3">
-              <div className="h-12 w-12 rounded-full icon-iridescent flex items-center justify-center">
-                <Shield className="h-6 w-6 text-primary" />
-              </div>
-              <div className="font-semibold">2-Year Warranty</div>
-              <div className="text-sm text-muted-foreground">Quality guaranteed</div>
-            </div> */}
           </div>
         </div>
       </div>
