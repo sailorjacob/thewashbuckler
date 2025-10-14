@@ -3,7 +3,6 @@
 import { Shield, Zap, Droplets, Sparkles, Clock, Heart, ChevronLeft, ChevronRight } from "lucide-react"
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
-import { AnimatedBackgroundCircles } from "./animated-background-circles"
 
 const features = [
   {
@@ -50,9 +49,8 @@ export function Features() {
   }
 
   return (
-    <section id="features" className="hidden relative py-20 sm:py-32 bg-background">
-      <AnimatedBackgroundCircles />
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <section id="features" className="hidden py-20 sm:py-32 bg-background">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-4xl sm:text-5xl font-bold tracking-tight mb-4 text-balance">
             Why Choose The Washbuckler™?

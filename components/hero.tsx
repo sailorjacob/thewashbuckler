@@ -4,7 +4,6 @@ import { Button } from "@/components/ui/button"
 import { ArrowRight } from "lucide-react"
 import Image from "next/image"
 import { useCart } from "./cart-context"
-import { AnimatedBackgroundCircles } from "./animated-background-circles"
 
 export function Hero() {
   const { addItem } = useCart()
@@ -15,8 +14,7 @@ export function Hero() {
 
   return (
     <section className="relative overflow-hidden bg-gradient-to-b from-accent/30 to-background py-20 sm:py-32">
-      <AnimatedBackgroundCircles />
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Column - Content */}
           <div className="space-y-8">

@@ -2,7 +2,6 @@
 
 import Image from "next/image"
 import { useState } from "react"
-import { AnimatedBackgroundCircles } from "./animated-background-circles"
 
 const steps = [
   {
@@ -31,9 +30,8 @@ export function HowItWorks() {
   const [flippedStep, setFlippedStep] = useState<number | null>(null)
 
   return (
-    <section id="how-it-works" className="relative py-20 sm:py-32 bg-accent/30">
-      <AnimatedBackgroundCircles />
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <section id="how-it-works" className="py-20 sm:py-32 bg-accent/30">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-4xl sm:text-5xl font-bold tracking-tight mb-4 text-balance">Setup in 3 Simple Steps</h2>
           <p className="text-xl text-muted-foreground text-pretty">
