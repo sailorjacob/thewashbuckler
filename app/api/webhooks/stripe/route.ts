@@ -1,10 +1,10 @@
 import { NextRequest, NextResponse } from "next/server"
-import { headers } from "next/headers"
+import { unstable_noStore as noStore } from "next/cache"
 import Stripe from "stripe"
 
 export async function POST(request: NextRequest) {
-  // Use headers() to make this route dynamic and prevent build-time execution
-  headers()
+  // Prevent caching and force dynamic rendering
+  noStore()
   // Initialize Stripe only when the webhook is called, not during build
   if (!process.env.STRIPE_SECRET_KEY || !process.env.STRIPE_WEBHOOK_SECRET) {
     console.error("Missing Stripe environment variables")

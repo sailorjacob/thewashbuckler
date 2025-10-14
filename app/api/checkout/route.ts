@@ -1,12 +1,12 @@
 "use server"
 
 import { NextRequest, NextResponse } from "next/server"
-import { headers } from "next/headers"
+import { unstable_noStore as noStore } from "next/cache"
 import { startCheckoutSession } from "../../actions/stripe"
 
 export async function POST(request: NextRequest) {
-  // Use headers() to make this route dynamic and prevent build-time execution
-  headers()
+  // Prevent caching and force dynamic rendering
+  noStore()
   try {
     const body = await request.json()
     const { productId } = body
