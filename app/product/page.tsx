@@ -29,9 +29,10 @@ export default function ProductPage() {
                   <Button size="lg" className="btn-iridescent text-foreground font-semibold">
                     Order Now - $29.99
                   </Button>
-                  <Button size="lg" variant="outline">
+                  {/* Watch Demo button temporarily hidden */}
+                  {/* <Button size="lg" variant="outline">
                     Watch Demo
-                  </Button>
+                  </Button> */}
                 </div>
               </div>
               <div className="relative h-[400px] lg:h-[500px]">

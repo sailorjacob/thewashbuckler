@@ -75,11 +75,12 @@ export function Footer() {
                   How It Works
                 </a>
               </li>
-              <li>
+              {/* Reviews link temporarily hidden */}
+              {/* <li>
                 <a href="/reviews" className="hover:text-primary transition-colors">
                   Reviews
                 </a>
-              </li>
+              </li> */}
               <li>
                 <a href="/faq" className="hover:text-primary transition-colors">
                   FAQ
@@ -107,11 +108,12 @@ export function Footer() {
                   Shipping
                 </a>
               </li>
-              <li>
+              {/* Returns link temporarily hidden */}
+              {/* <li>
                 <a href="/returns" className="hover:text-primary transition-colors">
                   Returns
                 </a>
-              </li>
+              </li> */}
             </ul>
           </div>
 

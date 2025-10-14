@@ -37,17 +37,18 @@ export function Hero() {
                 Shop Now - $29.99
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
-              <Button size="lg" variant="outline" className="font-semibold text-lg px-8 py-6 bg-transparent">
+              {/* Watch Demo button temporarily hidden */}
+              {/* <Button size="lg" variant="outline" className="font-semibold text-lg px-8 py-6 bg-transparent">
                 Watch Demo
-              </Button>
+              </Button> */}
             </div>
 
-            {/* Trust Indicators */}
-            <div className="flex flex-wrap items-center gap-6 pt-4">
+            {/* Trust Indicators - temporarily hidden */}
+            {/* <div className="flex flex-wrap items-center gap-6 pt-4">
               <div className="text-sm text-muted-foreground">
                 ✓ Free Shipping • ✓ 30-Day Returns
               </div>
-            </div>
+            </div> */}
           </div>
 
           {/* Right Column - Product Image */}

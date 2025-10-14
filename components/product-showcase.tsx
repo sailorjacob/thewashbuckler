@@ -82,9 +82,10 @@ export function ProductShowcase() {
               >
                 Order Your Washbuckler™ Today
               </Button>
-              <p className="text-sm text-muted-foreground mt-4">
+              {/* Free shipping and guarantee info temporarily hidden */}
+              {/* <p className="text-sm text-muted-foreground mt-4">
                 ✓ Free shipping on orders over $50 • ✓ 30-day money-back guarantee
-              </p>
+              </p> */}
             </div>
           </div>
         </div>
