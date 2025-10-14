@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button"
 import { ArrowRight } from "lucide-react"
 import Image from "next/image"
 import { useCart } from "./cart-context"
+import { DemoVideo } from "./demo-video"
 
 export function Hero() {
   const { addItem } = useCart()
@@ -34,13 +35,14 @@ export function Hero() {
                 className="btn-iridescent text-foreground font-semibold text-lg px-8 py-6"
                 onClick={handleShopNow}
               >
-                Shop Now - $29.99
+                Shop Now - $14.99
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
-              {/* Watch Demo button temporarily hidden */}
-              {/* <Button size="lg" variant="outline" className="font-semibold text-lg px-8 py-6 bg-transparent">
-                Watch Demo
-              </Button> */}
+              <DemoVideo>
+                <Button size="lg" variant="outline" className="font-semibold text-lg px-8 py-6 bg-transparent">
+                  Watch Demo
+                </Button>
+              </DemoVideo>
             </div>
 
             {/* Trust Indicators - temporarily hidden */}

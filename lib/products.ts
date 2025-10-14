@@ -13,7 +13,7 @@ export const PRODUCTS: Product[] = [
     name: "The Washbuckler™ - Sink Splash Guard",
     description:
       "Revolutionary sink splash guard that keeps your counters dry and your kitchen mess-free. Easy installation, premium quality.",
-    priceInCents: 2999, // $29.99
+    priceInCents: 1499, // $14.99
   },
 ]
 

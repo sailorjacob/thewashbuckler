@@ -3,6 +3,7 @@ import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
 import { Check, Shield, Droplets, Sparkles } from "lucide-react"
 import { SafeImage } from "@/components/ui/safe-image"
+import { DemoVideo } from "@/components/demo-video"
 
 // Force dynamic rendering to avoid client component serialization issues
 export const dynamic = 'force-dynamic'
@@ -27,12 +28,13 @@ export default function ProductPage() {
                 </p>
                 <div className="flex flex-wrap gap-4">
                   <Button size="lg" className="btn-iridescent text-foreground font-semibold">
-                    Order Now - $29.99
+                    Order Now - $14.99
                   </Button>
-                  {/* Watch Demo button temporarily hidden */}
-                  {/* <Button size="lg" variant="outline">
-                    Watch Demo
-                  </Button> */}
+                  <DemoVideo>
+                    <Button size="lg" variant="outline">
+                      Watch Demo
+                    </Button>
+                  </DemoVideo>
                 </div>
               </div>
               <div className="relative h-[400px] lg:h-[500px]">
