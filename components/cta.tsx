@@ -3,6 +3,7 @@
 import { Button } from "@/components/ui/button"
 import { ArrowRight, Truck, RotateCcw } from "lucide-react"
 import { useCart } from "./cart-context"
+import { AnimatedBackgroundCircles } from "./animated-background-circles"
 
 export function CTA() {
   const { addItem } = useCart()
@@ -12,8 +13,9 @@ export function CTA() {
   }
 
   return (
-    <section className="py-20 sm:py-32 bg-gradient-to-b from-primary/5 to-background">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="relative py-20 sm:py-32 bg-gradient-to-b from-primary/5 to-background">
+      <AnimatedBackgroundCircles />
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="max-w-4xl mx-auto text-center space-y-8">
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-balance">
             Ready for a Splash-Free Kitchen?

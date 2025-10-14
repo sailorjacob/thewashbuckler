@@ -4,6 +4,7 @@ import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Check } from "lucide-react"
 import { useCart } from "./cart-context"
+import { AnimatedBackgroundCircles } from "./animated-background-circles"
 
 const benefits = [
   "Premium food-safe materials",
@@ -20,8 +21,9 @@ export function ProductShowcase() {
   }
 
   return (
-    <section className="py-20 sm:py-32 bg-background">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="relative py-20 sm:py-32 bg-background">
+      <AnimatedBackgroundCircles />
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Product Images Grid */}
           <div className="grid grid-cols-2 gap-4">

@@ -1,4 +1,5 @@
 import { Card } from "@/components/ui/card"
+import { AnimatedBackgroundCircles } from "./animated-background-circles"
 
 const testimonials = [
   {
@@ -26,8 +27,9 @@ const testimonials = [
 
 export function Testimonials() {
   return (
-    <section id="testimonials" className="hidden py-20 sm:py-32 bg-accent/30">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="testimonials" className="hidden relative py-20 sm:py-32 bg-accent/30">
+      <AnimatedBackgroundCircles />
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-4xl sm:text-5xl font-bold tracking-tight mb-4 text-balance">Loved by Our Customers</h2>
           <p className="text-xl text-muted-foreground text-pretty">
