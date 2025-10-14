@@ -67,7 +67,7 @@ export function Hero() {
                 src="https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/washbuckler/product%20shothq.png"
                 alt="The Washbuckler Sink Splash Guard"
                 fill
-                className="object-contain"
+                className="object-cover object-center"
                 priority
               />
             </div>
