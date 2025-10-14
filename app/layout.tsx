@@ -17,9 +17,9 @@ export const metadata: Metadata = {
     "Say goodbye to kitchen sink splashes with The Washbuckler™. Revolutionary splash guard that installs in seconds.",
   keywords: "sink splash guard, kitchen accessories, dishwashing, splash protection, Washbuckler",
   icons: {
-    icon: "/placeholder-logo.svg",
-    shortcut: "/placeholder-logo.svg",
-    apple: "/placeholder-logo.svg",
+    icon: "/favicon.svg",
+    shortcut: "/favicon.svg",
+    apple: "/favicon.svg",
   },
   openGraph: {
     title: "The Washbuckler™ - Sink Splash Guard",
