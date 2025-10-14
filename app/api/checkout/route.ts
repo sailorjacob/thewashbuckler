@@ -1,12 +1,12 @@
 "use server"
 
 import { NextRequest, NextResponse } from "next/server"
+import { headers } from "next/headers"
 import { startCheckoutSession } from "../../actions/stripe"
 
-// Force dynamic rendering for this API route
-export const dynamic = 'force-dynamic'
-
 export async function POST(request: NextRequest) {
+  // Use headers() to make this route dynamic and prevent build-time execution
+  headers()
   try {
     const body = await request.json()
     const { productId } = body
