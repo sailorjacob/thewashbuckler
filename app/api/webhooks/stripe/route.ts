@@ -1,10 +1,15 @@
 import { NextRequest, NextResponse } from "next/server"
 import Stripe from "stripe"
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!)
-const endpointSecret = process.env.STRIPE_WEBHOOK_SECRET!
-
 export async function POST(request: NextRequest) {
+  // Initialize Stripe only when the webhook is called, not during build
+  if (!process.env.STRIPE_SECRET_KEY || !process.env.STRIPE_WEBHOOK_SECRET) {
+    console.error("Missing Stripe environment variables")
+    return NextResponse.json({ error: "Server configuration error" }, { status: 500 })
+  }
+
+  const stripe = new Stripe(process.env.STRIPE_SECRET_KEY)
+  const endpointSecret = process.env.STRIPE_WEBHOOK_SECRET
   try {
     const body = await request.text()
     const sig = request.headers.get("stripe-signature")!

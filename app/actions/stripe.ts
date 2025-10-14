@@ -1,6 +1,6 @@
 "use server"
 
-import { stripe } from "../../lib/stripe"
+import { getStripe } from "../../lib/stripe"
 import { PRODUCTS } from "../../lib/products"
 
 export async function startCheckoutSession(productId: string) {
@@ -10,7 +10,7 @@ export async function startCheckoutSession(productId: string) {
   }
 
   // Create Checkout Sessions from body params.
-  const session = await stripe.checkout.sessions.create({
+  const session = await getStripe().checkout.sessions.create({
     ui_mode: "embedded",
     redirect_on_completion: "never",
     line_items: [
