@@ -1,7 +1,7 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import { ArrowRight, Star } from "lucide-react"
+import { ArrowRight } from "lucide-react"
 import Image from "next/image"
 import { useCart } from "./cart-context"
 
@@ -48,14 +48,8 @@ export function Hero() {
 
             {/* Trust Indicators */}
             <div className="flex flex-wrap items-center gap-6 pt-4">
-              <div className="flex items-center gap-1">
-                {[1, 2, 3, 4, 5].map((i) => (
-                  <Star key={i} className="h-5 w-5 fill-secondary text-secondary" />
-                ))}
-                <span className="ml-2 text-sm font-medium">4.9/5 Rating</span>
-              </div>
               <div className="text-sm text-muted-foreground">
-                ✓ Free Shipping • ✓ 30-Day Returns • ✓ 2-Year Warranty
+                ✓ Free Shipping • ✓ 30-Day Returns
               </div>
             </div>
           </div>

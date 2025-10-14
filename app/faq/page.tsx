@@ -37,11 +37,6 @@ export default function FAQPage() {
         "We offer a 30-day money-back guarantee. If you're not completely satisfied with your Washbuckler™, return it within 30 days for a full refund. See our Returns page for more details.",
     },
     {
-      question: "Do you offer a warranty?",
-      answer:
-        "Yes! The Washbuckler™ comes with a 1-year warranty against manufacturing defects. If you experience any issues with your splash guard, we'll replace it free of charge.",
-    },
-    {
       question: "Can I buy multiple units?",
       answer:
         "Many customers buy multiple Washbucklers™ for different sinks in their home or as gifts. We offer bundle discounts for multiple purchases - check our product page for current offers.",

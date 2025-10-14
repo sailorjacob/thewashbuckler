@@ -1,6 +1,5 @@
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
-import { Star } from "lucide-react"
 
 // Force dynamic rendering to avoid client component serialization issues
 export const dynamic = 'force-dynamic'
@@ -63,12 +62,6 @@ export default function ReviewsPage() {
     },
   ]
 
-  const stats = [
-    { label: "Average Rating", value: "4.9/5" },
-    { label: "Total Reviews", value: "2,847" },
-    { label: "Recommend", value: "98%" },
-    { label: "Verified Purchases", value: "100%" },
-  ]
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -81,19 +74,20 @@ export default function ReviewsPage() {
               Customer Reviews
               <span className="block text-primary">Loved by Thousands</span>
             </h1>
-            <div className="flex items-center justify-center gap-2 mb-4">
+            {/* Star rating temporarily hidden */}
+            {/* <div className="flex items-center justify-center gap-2 mb-4">
               {[...Array(5)].map((_, i) => (
                 <Star key={i} className="h-8 w-8 fill-primary text-primary" />
               ))}
-            </div>
+            </div> */}
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto text-pretty">
               See what our customers are saying about The Washbuckler™
             </p>
           </div>
         </section>
 
-        {/* Stats */}
-        <section className="py-12 bg-muted/30">
+        {/* Stats temporarily hidden */}
+        {/* <section className="py-12 bg-muted/30">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
               {stats.map((stat, index) => (
@@ -104,7 +98,7 @@ export default function ReviewsPage() {
               ))}
             </div>
           </div>
-        </section>
+        </section> */}
 
         {/* Reviews */}
         <section className="py-20">
@@ -113,11 +107,12 @@ export default function ReviewsPage() {
               {reviews.map((review, index) => (
                 <div key={index} className="p-6 rounded-lg bg-muted/30 border border-border">
                   <div className="flex items-center justify-between mb-4">
-                    <div className="flex gap-1">
+                    {/* Rating stars temporarily hidden */}
+                    {/* <div className="flex gap-1">
                       {[...Array(review.rating)].map((_, i) => (
                         <Star key={i} className="h-4 w-4 fill-primary text-primary" />
                       ))}
-                    </div>
+                    </div> */}
                     {review.verified && (
                       <span className="text-xs bg-primary/10 text-primary px-2 py-1 rounded">Verified Purchase</span>
                     )}

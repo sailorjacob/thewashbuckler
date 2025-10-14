@@ -1,7 +1,7 @@
 "use client"
 
 import { SafeImage } from "@/components/ui/safe-image"
-import { Facebook, Instagram, Twitter, Mail } from "lucide-react"
+import { Mail } from "lucide-react"
 
 export function Footer() {
   return (
@@ -22,7 +22,8 @@ export function Footer() {
               The ultimate sink splash guard for a cleaner, drier kitchen.
             </p>
             <div className="flex gap-4">
-              <a
+              {/* Social media icons temporarily hidden, keeping only email */}
+              {/* <a
                 href="https://facebook.com/thewashbuckler"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -45,7 +46,7 @@ export function Footer() {
                 className="text-muted-foreground hover:text-primary transition-colors"
               >
                 <Twitter className="h-5 w-5" />
-              </a>
+              </a> */}
               <a
                 href="mailto:splash@thewashbuckler.com"
                 className="text-muted-foreground hover:text-primary transition-colors"
@@ -128,11 +129,12 @@ export function Footer() {
                   Terms of Service
                 </a>
               </li>
-              <li>
+              {/* Warranty link temporarily hidden */}
+              {/* <li>
                 <a href="/warranty" className="hover:text-primary transition-colors">
                   Warranty
                 </a>
-              </li>
+              </li> */}
             </ul>
           </div>
         </div>

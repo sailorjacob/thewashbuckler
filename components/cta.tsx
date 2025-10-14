@@ -1,7 +1,7 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import { ArrowRight, Shield, Truck, RotateCcw } from "lucide-react"
+import { ArrowRight, Truck, RotateCcw } from "lucide-react"
 import { useCart } from "./cart-context"
 
 export function CTA() {
@@ -49,13 +49,14 @@ export function CTA() {
               <div className="font-semibold">30-Day Returns</div>
               <div className="text-sm text-muted-foreground">Money-back guarantee</div>
             </div>
-            <div className="flex flex-col items-center gap-3">
+            {/* Warranty section temporarily hidden */}
+            {/* <div className="flex flex-col items-center gap-3">
               <div className="h-12 w-12 rounded-full icon-iridescent flex items-center justify-center">
                 <Shield className="h-6 w-6 text-primary" />
               </div>
               <div className="font-semibold">2-Year Warranty</div>
               <div className="text-sm text-muted-foreground">Quality guaranteed</div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

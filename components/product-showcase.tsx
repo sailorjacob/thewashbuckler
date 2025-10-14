@@ -10,7 +10,6 @@ const benefits = [
   "Secure suction cup attachment",
   "Easy to clean & maintain",
   "Dishwasher safe",
-  "2-year warranty included",
 ]
 
 export function ProductShowcase() {
