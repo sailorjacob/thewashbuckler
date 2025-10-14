@@ -28,8 +28,7 @@ export function CTA() {
               className="btn-iridescent text-foreground font-semibold text-lg px-8 py-6"
               onClick={handleGetWashbuckler}
             >
-              Get The Washbuckler™ - $29.99
-              <ArrowRight className="ml-2 h-5 w-5" />
+              Get The Washbuckler™
             </Button>
           </div>
 

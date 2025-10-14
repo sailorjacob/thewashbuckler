@@ -80,7 +80,7 @@ export function ProductShowcase() {
                 className="btn-iridescent text-foreground font-semibold text-lg px-8 py-6"
                 onClick={handleOrderNow}
               >
-                Order Your Washbuckler™ Today
+                Order Now
               </Button>
               {/* Free shipping and guarantee info temporarily hidden */}
               {/* <p className="text-sm text-muted-foreground mt-4">
