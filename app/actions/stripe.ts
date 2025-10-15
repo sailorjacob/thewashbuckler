@@ -1,21 +1,26 @@
 "use server"
 
-import Stripe from "stripe"
 import { PRODUCTS } from "../../lib/products"
-
-// Initialize Stripe directly in the server action to ensure env vars are available
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
-  apiVersion: "2024-10-28.acacia",
-})
 
 export async function startCheckoutSession(productId: string) {
   try {
+    // Check if environment variables are available (runtime check)
+    if (!process.env.STRIPE_SECRET_KEY) {
+      throw new Error("STRIPE_SECRET_KEY environment variable is not available")
+    }
+
     const product = PRODUCTS.find((p) => p.id === productId)
     if (!product) {
       throw new Error(`Product with id "${productId}" not found`)
     }
 
     console.log("Creating checkout session for product:", product.name, "Price:", product.priceInCents)
+
+    // Lazy import and initialize Stripe only when needed
+    const Stripe = (await import("stripe")).default
+    const stripe = new Stripe(process.env.STRIPE_SECRET_KEY, {
+      apiVersion: "2024-10-28.acacia",
+    })
 
     // Create Checkout Sessions from body params.
     const session = await stripe.checkout.sessions.create({

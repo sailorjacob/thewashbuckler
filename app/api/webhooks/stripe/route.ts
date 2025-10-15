@@ -1,6 +1,5 @@
 import { NextRequest, NextResponse } from "next/server"
 import { unstable_noStore as noStore } from "next/cache"
-import Stripe from "stripe"
 
 export async function POST(request: NextRequest) {
   // Force dynamic rendering and prevent caching
@@ -12,6 +11,8 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: "Service temporarily unavailable" }, { status: 503 })
   }
 
+  // Lazy import and initialize Stripe only when needed
+  const Stripe = (await import("stripe")).default
   const stripe = new Stripe(process.env.STRIPE_SECRET_KEY)
   const endpointSecret = process.env.STRIPE_WEBHOOK_SECRET
   try {
