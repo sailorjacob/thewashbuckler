@@ -15,7 +15,7 @@ const steps = [
     number: "02",
     title: "Attach to Sink",
     description:
-      "Press the suction cups firmly against the inside of your sink. Ensure a tight seal for maximum protection.",
+      "Run the suction cups under water for better adhesion, then press them firmly against the inside of your sink. Ensure a tight seal for maximum protection.",
     image: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/washbuckler/attaching.jpeg",
   },
   {

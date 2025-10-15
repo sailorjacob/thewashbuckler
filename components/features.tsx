@@ -18,7 +18,7 @@ const features = [
   {
     icon: Shield,
     title: "Durable & Long-Lasting",
-    description: "Made from premium, food-safe materials that withstand daily use for years.",
+    description: "Made of recycled plastics that withstand daily use for years.",
   },
   {
     icon: Sparkles,

@@ -17,9 +17,9 @@ export default function HowItWorksPage() {
     },
     {
       number: "02",
-      title: "Position Behind Faucet",
+      title: "Position Inside of Sink, Obviously!",
       description:
-        "Simply place The Washbuckler™ behind your kitchen faucet. The flexible design adapts to most sink configurations.",
+        "Simply place The Washbuckler™ inside your kitchen sink. The flexible design adapts to most sink configurations.",
       image: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/washbuckler/attaching.jpeg",
     },
     {
