@@ -1,12 +1,12 @@
 "use server"
 
 import { NextRequest, NextResponse } from "next/server"
-import { unstable_noStore as noStore } from "next/cache"
 import { startCheckoutSession } from "../../actions/stripe"
 
+// Export runtime to ensure Node.js runtime
+export const runtime = 'nodejs'
+
 export async function POST(request: NextRequest) {
-  // Prevent caching and force dynamic rendering
-  noStore()
   try {
     const body = await request.json()
     const { productId } = body
