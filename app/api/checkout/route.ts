@@ -1,12 +1,19 @@
 "use server"
 
 import { NextRequest, NextResponse } from "next/server"
+import { unstable_noStore as noStore } from "next/cache"
 import { startCheckoutSession } from "../../actions/stripe"
 
-// Export runtime to ensure Node.js runtime
-export const runtime = 'nodejs'
-
 export async function POST(request: NextRequest) {
+  // Force dynamic rendering and prevent caching
+  noStore()
+
+  // Early return if environment variables are not available (build time)
+  if (!process.env.STRIPE_SECRET_KEY) {
+    console.log("Build time execution detected - skipping Stripe initialization")
+    return NextResponse.json({ error: "Service temporarily unavailable" }, { status: 503 })
+  }
+
   try {
     const body = await request.json()
     const { productId } = body
