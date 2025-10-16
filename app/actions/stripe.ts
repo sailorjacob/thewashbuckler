@@ -41,8 +41,6 @@ export async function startCheckoutSession(productId: string) {
         },
       ],
       mode: "payment",
-      success_url: `${process.env.NEXT_PUBLIC_BASE_URL || 'https://thewashbuckler.com'}/success`,
-      cancel_url: `${process.env.NEXT_PUBLIC_BASE_URL || 'https://thewashbuckler.com'}/`,
     })
 
     console.log("Checkout session created successfully:", session.id)
