@@ -43,7 +43,7 @@ export function CartDrawer() {
             </Button>
           </div>
           <div className="p-6">
-            <Checkout productId={productId} />
+            <Checkout key={productId} productId={productId} />
           </div>
         </div>
       </div>

@@ -8,10 +8,13 @@ export async function POST(request: NextRequest) {
   // Force dynamic rendering and prevent caching
   noStore()
 
-  // Early return if environment variables are not available (build time)
+  // Check if environment variables are available (runtime check)
   if (!process.env.STRIPE_SECRET_KEY) {
-    console.log("Build time execution detected - skipping Stripe initialization")
-    return NextResponse.json({ error: "Stripe configuration not available" }, { status: 503 })
+    console.error("STRIPE_SECRET_KEY environment variable is not available at runtime")
+    console.error("Available env vars:", Object.keys(process.env).filter(key => key.includes('STRIPE')))
+    return NextResponse.json({
+      error: "Payment service is temporarily unavailable. Please contact support if this persists."
+    }, { status: 503 })
   }
 
   try {

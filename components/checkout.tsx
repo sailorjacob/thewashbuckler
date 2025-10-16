@@ -14,6 +14,7 @@ export default function Checkout({ productId }: { productId: string }) {
   const [error, setError] = useState<string | null>(null)
   const [isLoading, setIsLoading] = useState(true)
   const [isClient, setIsClient] = useState(false)
+  const [retryCount, setRetryCount] = useState(0)
 
   // Ensure this only runs on the client side
   useEffect(() => {
@@ -53,21 +54,26 @@ export default function Checkout({ productId }: { productId: string }) {
   const handleRetry = () => {
     setError(null)
     setIsLoading(true)
+    setRetryCount(prev => prev + 1)
     // The EmbeddedCheckoutProvider will automatically retry when we clear the error
   }
 
   if (error) {
+    const canRetry = retryCount < 3
     return (
       <div className="space-y-4">
         <Alert variant="destructive">
           <AlertCircle className="h-4 w-4" />
           <AlertDescription>
             {error}
+            {canRetry ? " Please try again." : " If this persists, please contact support."}
           </AlertDescription>
         </Alert>
-        <Button onClick={handleRetry} className="w-full">
-          Try Again
-        </Button>
+        {canRetry && (
+          <Button onClick={handleRetry} className="w-full">
+            Try Again {retryCount > 0 && `(${retryCount}/3)`}
+          </Button>
+        )}
       </div>
     )
   }
@@ -95,6 +101,7 @@ export default function Checkout({ productId }: { productId: string }) {
         </div>
       )}
       <EmbeddedCheckoutProvider
+        key={`${productId}-${retryCount}`}
         stripe={stripePromise}
         options={{
           fetchClientSecret: startCheckoutSessionForProduct,
