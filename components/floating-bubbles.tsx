@@ -57,9 +57,11 @@ export function FloatingBubbles() {
 
   return (
     <div className="fixed inset-0 pointer-events-none overflow-hidden z-0">
-      {bubbles.map(bubble => (
+      {/* Hero Section Bubbles - positioned over Hero */}
+      <div className="absolute top-[20vh] left-0 right-0 h-[60vh] overflow-hidden">
+        {bubbles.slice(0, Math.ceil(bubbles.length * 0.6)).map(bubble => (
         <div
-          key={bubble.id}
+          key={`hero-${bubble.id}`}
           className="absolute rounded-full cursor-pointer"
           style={{
             left: `${bubble.x}px`,
@@ -86,7 +88,42 @@ export function FloatingBubbles() {
             setTimeout(() => removeBubble(bubble.id), 300)
           }}
         />
-      ))}
+        ))}
+      </div>
+
+      {/* CTA Section Bubbles - positioned over CTA */}
+      <div className="absolute bottom-[20vh] left-0 right-0 h-[50vh] overflow-hidden">
+        {bubbles.slice(Math.ceil(bubbles.length * 0.6)).map(bubble => (
+        <div
+          key={`cta-${bubble.id}`}
+          className="absolute rounded-full cursor-pointer"
+          style={{
+            left: `${bubble.x}px`,
+            top: `${bubble.y}px`,
+            width: `${bubble.size}px`,
+            height: `${bubble.size}px`,
+            background: `radial-gradient(circle at 30% 30%,
+              hsla(${bubble.hue}, 70%, 80%, ${bubble.opacity * 1.5}) 0%,
+              hsla(${bubble.hue + 20}, 60%, 70%, ${bubble.opacity * 1.2}) 25%,
+              hsla(${bubble.hue + 40}, 50%, 60%, ${bubble.opacity * 0.8}) 50%,
+              hsla(${bubble.hue + 60}, 40%, 50%, ${bubble.opacity * 0.4}) 75%,
+              transparent 100%)`,
+            boxShadow: `0 4px 20px hsla(${bubble.hue}, 60%, 60%, ${bubble.opacity * 0.6}),
+                       inset 0 1px 0 hsla(${bubble.hue + 30}, 80%, 90%, ${bubble.opacity * 0.8})`,
+            border: `1px solid hsla(${bubble.hue + 20}, 70%, 80%, ${bubble.opacity * 0.6})`,
+            animation: `bubble-float ${bubble.speed}s linear infinite`,
+            animationDelay: `${bubble.animationDelay}s`,
+            transform: `translateZ(0)`, // Enable hardware acceleration
+            transition: 'transform 0.3s ease, opacity 0.3s ease',
+          }}
+          onClick={(e) => {
+            e.currentTarget.style.transform = 'scale(0) rotate(180deg)'
+            e.currentTarget.style.opacity = '0'
+            setTimeout(() => removeBubble(bubble.id), 300)
+          }}
+        />
+        ))}
+      </div>
     </div>
   )
 }
