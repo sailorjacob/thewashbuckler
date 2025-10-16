@@ -33,9 +33,7 @@ export async function startCheckoutSession(productId: string) {
             product_data: {
               name: product.name,
               description: product.description,
-              images: product.images ? product.images.map(img => 
-                img.startsWith('http') ? img : `${process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'}${img}`
-              ) : undefined,
+              images: product.images ? product.images.filter(img => img.startsWith('http')).slice(0, 1) : undefined,
             },
             unit_amount: product.priceInCents,
           },
@@ -43,8 +41,8 @@ export async function startCheckoutSession(productId: string) {
         },
       ],
       mode: "payment",
-      success_url: `${process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'}/success`,
-      cancel_url: `${process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'}/`,
+      success_url: `${process.env.NEXT_PUBLIC_BASE_URL || 'https://thewashbuckler.com'}/success`,
+      cancel_url: `${process.env.NEXT_PUBLIC_BASE_URL || 'https://thewashbuckler.com'}/`,
     })
 
     console.log("Checkout session created successfully:", session.id)

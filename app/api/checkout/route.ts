@@ -11,7 +11,7 @@ export async function POST(request: NextRequest) {
   // Early return if environment variables are not available (build time)
   if (!process.env.STRIPE_SECRET_KEY) {
     console.log("Build time execution detected - skipping Stripe initialization")
-    return NextResponse.json({ error: "Service temporarily unavailable" }, { status: 503 })
+    return NextResponse.json({ error: "Stripe configuration not available" }, { status: 503 })
   }
 
   try {
@@ -22,12 +22,27 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: "Product ID is required" }, { status: 400 })
     }
 
+    console.log("Creating checkout session for product:", productId)
     const clientSecret = await startCheckoutSession(productId)
+    console.log("Checkout session created successfully")
     return NextResponse.json({ clientSecret })
   } catch (error) {
     console.error("Checkout error:", error)
+
+    // Provide more specific error messages
+    let errorMessage = "Failed to create checkout session"
+    if (error instanceof Error) {
+      if (error.message.includes("STRIPE_SECRET_KEY")) {
+        errorMessage = "Payment service configuration error"
+      } else if (error.message.includes("Product")) {
+        errorMessage = "Invalid product selection"
+      } else {
+        errorMessage = error.message
+      }
+    }
+
     return NextResponse.json(
-      { error: "Failed to create checkout session" },
+      { error: errorMessage },
       { status: 500 }
     )
   }
