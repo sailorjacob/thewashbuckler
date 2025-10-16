@@ -14,6 +14,11 @@ export const PRODUCTS: Product[] = [
     description:
       "Revolutionary sink splash guard that keeps your counters dry and your kitchen mess-free. Easy installation, premium quality.",
     priceInCents: 1499, // $14.99
+    images: [
+      "/modern-sink-splash-guard-product-shot.jpg",
+      "/splash-guard-installed-on-modern-kitchen-sink.jpg",
+      "/modern-sink-splash-guard-product-on-kitchen-counte.jpg"
+    ],
   },
 ]
 

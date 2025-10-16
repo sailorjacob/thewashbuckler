@@ -6,6 +6,7 @@ import { Button } from "./ui/button"
 import { X, Minus, Plus, ShoppingBag } from "lucide-react"
 import { useState } from "react"
 import dynamic from "next/dynamic"
+import Image from "next/image"
 
 const Checkout = dynamic(() => import("./checkout"), { ssr: false })
 
@@ -20,8 +21,11 @@ export function CartDrawer() {
     return sum + (product?.priceInCents || 0) * item.quantity
   }, 0)
 
-  if (showCheckout && items.length > 0) {
-    const productId = items[0].productId
+  // Filter out items with invalid products
+  const validItems = items.filter(item => getProduct(item.productId))
+
+  if (showCheckout && validItems.length > 0) {
+    const productId = validItems[0].productId
     return (
       <div className="fixed inset-0 z-50 bg-background/80 backdrop-blur-sm">
         <div className="fixed inset-y-0 right-0 w-full max-w-2xl bg-background shadow-2xl overflow-y-auto">
@@ -65,19 +69,35 @@ export function CartDrawer() {
 
         {/* Cart Items */}
         <div className="p-6 space-y-6">
-          {items.length === 0 ? (
+          {validItems.length === 0 ? (
             <div className="text-center py-12">
               <ShoppingBag className="h-16 w-16 mx-auto text-muted-foreground/50 mb-4" />
               <p className="text-lg text-muted-foreground">Your cart is empty</p>
             </div>
           ) : (
             <>
-              {items.map((item) => {
+              {validItems.map((item) => {
                 const product = getProduct(item.productId)
                 if (!product) return null
 
                 return (
                   <div key={item.productId} className="flex gap-4 p-4 rounded-lg border border-border">
+                    {/* Product Image */}
+                    <div className="flex-shrink-0">
+                      {product.images && product.images.length > 0 ? (
+                        <Image
+                          src={product.images[0]}
+                          alt={product.name}
+                          width={80}
+                          height={80}
+                          className="rounded-lg object-cover"
+                        />
+                      ) : (
+                        <div className="w-20 h-20 bg-muted rounded-lg flex items-center justify-center">
+                          <ShoppingBag className="h-8 w-8 text-muted-foreground" />
+                        </div>
+                      )}
+                    </div>
                     <div className="flex-1 space-y-2">
                       <h3 className="font-semibold">{product.name}</h3>
                       <p className="text-sm text-muted-foreground">{product.description}</p>
@@ -126,6 +146,7 @@ export function CartDrawer() {
                   size="lg"
                   className="w-full btn-iridescent text-foreground font-semibold text-lg"
                   onClick={() => setShowCheckout(true)}
+                  disabled={validItems.length === 0}
                 >
                   Proceed to Checkout
                 </Button>
