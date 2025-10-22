@@ -6,10 +6,9 @@ import { Check } from "lucide-react"
 import { useCart } from "./cart-context"
 
 const benefits = [
-  "Premium quality you can trust",
+  "Made of recycled plastics",
   "Secure suction cup attachment",
   "Easy to clean & maintain",
-  "Built to last",
 ]
 
 export function ProductShowcase() {

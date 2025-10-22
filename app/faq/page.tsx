@@ -17,14 +17,9 @@ export default function FAQPage() {
         "The Washbuckler™ is designed to work with most standard kitchen sinks and faucets. Its flexible design adapts to various sink configurations. If you have an unusual sink setup, please contact us before ordering.",
     },
     {
-      question: "How do I clean The Washbuckler™?",
-      answer:
-        "Cleaning is easy! Simply wipe it down with a damp cloth and mild soap. The smooth surface prevents buildup and makes maintenance effortless.",
-    },
-    {
       question: "What is it made of?",
       answer:
-        "The Washbuckler™ is made from premium BPA-free recycled plastic that's durable and built to last. It's designed to withstand daily use and maintain its shape and effectiveness over time.",
+        "The Washbuckler™ is made from premium BPA-free recycled plastic that's durable and eco-friendly. It's designed to withstand daily use and maintain its shape and effectiveness over time.",
     },
     {
       question: "How long does shipping take?",

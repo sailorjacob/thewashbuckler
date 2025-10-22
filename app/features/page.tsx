@@ -35,7 +35,7 @@ export default function FeaturesPage() {
       icon: Heart,
       title: "Easy to Clean",
       description:
-        "Simple to wipe down and maintain. Keeping your splash guard clean is as easy as washing your dishes.",
+        "Easy to wipe down and maintain. Keeping your splash guard clean is as simple as washing your dishes.",
     },
     {
       icon: Leaf,

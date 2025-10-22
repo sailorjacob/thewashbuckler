@@ -80,14 +80,6 @@ export default function ProductPage() {
                       <Check className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
                       <span>BPA-free premium plastic</span>
                     </li>
-                    <li className="flex items-start gap-2">
-                      <Check className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                      <span>Durable construction</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <Check className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                      <span>Easy to maintain</span>
-                    </li>
                   </ul>
                 </div>
               </div>
@@ -107,7 +99,7 @@ export default function ProductPage() {
                 <div className="text-center p-6 rounded-lg bg-muted/30">
                   <Sparkles className="h-12 w-12 text-primary mx-auto mb-4" />
                   <h3 className="font-semibold mb-2">Easy to Clean</h3>
-                  <p className="text-sm text-muted-foreground">Simple wipe-down maintenance</p>
+                  <p className="text-sm text-muted-foreground">Easy to clean and maintain</p>
                 </div>
               </div>
             </div>
