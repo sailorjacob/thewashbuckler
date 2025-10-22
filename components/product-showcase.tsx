@@ -6,10 +6,10 @@ import { Check } from "lucide-react"
 import { useCart } from "./cart-context"
 
 const benefits = [
-  "Premium food-safe materials",
+  "Premium quality you can trust",
   "Secure suction cup attachment",
   "Easy to clean & maintain",
-  "Dishwasher safe",
+  "Built to last",
 ]
 
 export function ProductShowcase() {

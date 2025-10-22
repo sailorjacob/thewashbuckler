@@ -35,7 +35,7 @@ export default function FeaturesPage() {
       icon: Heart,
       title: "Easy to Clean",
       description:
-        "Dishwasher safe and easy to wipe down. Maintaining your splash guard is as simple as washing your dishes.",
+        "Simple to wipe down and maintain. Keeping your splash guard clean is as easy as washing your dishes.",
     },
     {
       icon: Leaf,

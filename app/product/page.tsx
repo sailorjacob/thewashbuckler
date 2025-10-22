@@ -82,11 +82,11 @@ export default function ProductPage() {
                     </li>
                     <li className="flex items-start gap-2">
                       <Check className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                      <span>Food-safe materials</span>
+                      <span>Durable construction</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <Check className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                      <span>Dishwasher safe</span>
+                      <span>Easy to maintain</span>
                     </li>
                   </ul>
                 </div>
@@ -107,7 +107,7 @@ export default function ProductPage() {
                 <div className="text-center p-6 rounded-lg bg-muted/30">
                   <Sparkles className="h-12 w-12 text-primary mx-auto mb-4" />
                   <h3 className="font-semibold mb-2">Easy to Clean</h3>
-                  <p className="text-sm text-muted-foreground">Dishwasher safe for convenience</p>
+                  <p className="text-sm text-muted-foreground">Simple wipe-down maintenance</p>
                 </div>
               </div>
             </div>
