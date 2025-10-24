@@ -9,9 +9,9 @@ export default function FeaturesPage() {
   const features = [
     {
       icon: Droplets,
-      title: "99% Splash Protection",
+      title: "Stay Dry While You Wash",
       description:
-        "Our innovative design blocks virtually all water splashes, keeping your counters and floors dry while you wash dishes.",
+        "Our innovative design effectively blocks water splashes, keeping you and your clothes dry while you wash dishes.",
     },
     {
       icon: Shield,
@@ -23,7 +23,7 @@ export default function FeaturesPage() {
       icon: Sparkles,
       title: "Easy Installation",
       description:
-        "No tools required! Simply place The Washbuckler™ behind your faucet and enjoy instant splash protection.",
+        "Ensure your sink walls are clean and free of debris. Run suction cups under water to moisten, then attach suction cups to the inside of your sink and adjust as needed.",
     },
     {
       icon: Zap,
@@ -33,14 +33,14 @@ export default function FeaturesPage() {
     },
     {
       icon: Heart,
-      title: "Easy to Clean",
+      title: "Easy to Clean and Store",
       description:
-        "Easy to wipe down and maintain. Keeping your splash guard clean is as simple as washing your dishes.",
+        "Easy to wipe down and maintain. Store behind faucet or in a drawer when not in use. Keeping your splash guard clean is as simple as washing your dishes.",
     },
     {
       icon: Leaf,
       title: "Eco-Friendly",
-      description: "Reduce water waste and cleaning product usage by keeping your kitchen cleaner with less effort.",
+      description: "Keep you and your clothes dry, reducing laundry loads and cleanup time. Less washing means less water and energy use.",
     },
   ]
 
@@ -56,7 +56,7 @@ export default function FeaturesPage() {
               <span className="block text-primary">A Difference</span>
             </h1>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto text-pretty">
-              Discover why thousands of homeowners trust The Washbuckler™ to keep their kitchens clean and dry.
+              Discover why thousands of homeowners trust The Washbuckler™ to keep you and your clothes dry.
             </p>
           </div>
         </section>
@@ -84,8 +84,8 @@ export default function FeaturesPage() {
               <div className="p-8 rounded-lg bg-background border-2 border-destructive/20">
                 <h3 className="text-2xl font-semibold mb-4 text-destructive">Without Washbuckler™</h3>
                 <ul className="space-y-3 text-muted-foreground">
+                  <li>❌ Soggy or soaking wet clothes</li>
                   <li>❌ Constant counter wiping</li>
-                  <li>❌ Water damage to cabinets</li>
                   <li>❌ Slippery floors</li>
                   <li>❌ Wasted cleaning time</li>
                   <li>❌ Frustration and mess</li>
@@ -94,8 +94,8 @@ export default function FeaturesPage() {
               <div className="p-8 rounded-lg bg-primary/5 border-2 border-primary/20">
                 <h3 className="text-2xl font-semibold mb-4 text-primary">With Washbuckler™</h3>
                 <ul className="space-y-3 text-muted-foreground">
+                  <li>✅ You and your clothes stay dry</li>
                   <li>✅ Dry counters all day</li>
-                  <li>✅ Protected cabinets</li>
                   <li>✅ Safe, dry floors</li>
                   <li>✅ More free time</li>
                   <li>✅ Peace of mind</li>

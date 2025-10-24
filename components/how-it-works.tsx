@@ -13,15 +13,15 @@ const steps = [
   },
   {
     number: "02",
-    title: "Attach to Sink",
+    title: "Prepare and Attach",
     description:
-      "Run the suction cups under water for better adhesion, then press them firmly against the inside of your sink. Ensure a tight seal for maximum protection.",
-    image: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/washbuckler/attaching.jpeg",
+      "Ensure your sink walls are clean and free of debris. Run suction cups under water to moisten, then attach suction cups to the inside of your sink and adjust as needed.",
+    image: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/washbuckler/washingsuctioncups.jpg",
   },
   {
     number: "03",
-    title: "Wash Splash-Free",
-    description: "Enjoy a completely splash-free dishwashing experience. Keep your kitchen clean and dry.",
+    title: "Stay Dry While You Wash!",
+    description: "Enjoy keeping you and your clothes dry while dishwashing. The Washbuckler effectively blocks messy splashes so you stay comfortable and dry.",
     image: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/washbuckler/washing.jpeg",
   },
 ]
@@ -33,7 +33,7 @@ export function HowItWorks() {
     <section id="how-it-works" className="py-20 sm:py-32 bg-accent/30">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-4xl sm:text-5xl font-bold tracking-tight mb-4 text-balance">Setup in 3 Simple Steps</h2>
+          <h2 className="text-4xl sm:text-5xl font-bold tracking-tight mb-4 text-balance">Setup is Simple!</h2>
           <p className="text-xl text-muted-foreground text-pretty">
             From box to splash-free in under 60 seconds. It's that easy.
           </p>

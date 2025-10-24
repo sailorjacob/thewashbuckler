@@ -8,7 +8,7 @@ import { useCart } from "./cart-context"
 const benefits = [
   "Made of recycled plastics",
   "Secure suction cup attachment",
-  "Easy to clean & maintain",
+  "Easy to clean and store",
 ]
 
 export function ProductShowcase() {
@@ -57,8 +57,8 @@ export function ProductShowcase() {
                 Premium Quality You Can Trust
               </h2>
               <p className="text-xl text-muted-foreground text-pretty leading-relaxed">
-                The Washbuckler™ is crafted from the highest quality materials, designed to last, and engineered to make
-                your life easier every single day.
+                The Washbuckler™ is crafted from the highest quality materials, designed to last, and engineered to keep
+                you and your clothes dry every single day.
               </p>
             </div>
 
@@ -79,7 +79,7 @@ export function ProductShowcase() {
                 className="btn-iridescent text-foreground font-semibold text-lg px-8 py-6"
                 onClick={handleOrderNow}
               >
-                Order Now - $14.99
+                Order Now - $19.99
               </Button>
               {/* Free shipping and guarantee info temporarily hidden */}
               {/* <p className="text-sm text-muted-foreground mt-4">

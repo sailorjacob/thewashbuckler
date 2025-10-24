@@ -25,8 +25,7 @@ export function Hero() {
             </h1>
 
             <p className="text-xl text-muted-foreground text-pretty leading-relaxed">
-              The Washbuckler™ is the revolutionary sink splash guard that keeps your counters dry, your clothes clean,
-              and your kitchen mess-free. Install in seconds, enjoy for years.
+              The Washbuckler - the ultimate solution for a mess-free washing experience! Tired of getting soaked while hand washing dishes? Say goodbye to soggy aprons that don't do the job. With its innovative design, the Washbuckler ensures you and your clothes stay dry by effectively blocking messy splashes.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
@@ -35,7 +34,7 @@ export function Hero() {
                 className="btn-iridescent text-foreground font-semibold text-lg px-8 py-6"
                 onClick={handleShopNow}
               >
-                Shop Now - $14.99
+                Shop Now - $19.99
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
               <DemoVideo>
@@ -66,8 +65,8 @@ export function Hero() {
             </div>
             {/* Floating Badge */}
             <div className="absolute -bottom-6 -left-6 bg-card border-2 border-border rounded-2xl p-6 shadow-xl">
-              <div className="text-3xl font-bold text-primary">100%</div>
-              <div className="text-sm text-muted-foreground">Splash-Free</div>
+              <div className="text-2xl font-bold text-primary">Stay Dry</div>
+              <div className="text-sm text-muted-foreground">While You Wash!</div>
             </div>
           </div>
         </div>

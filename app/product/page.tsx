@@ -23,12 +23,11 @@ export default function ProductPage() {
                   <span className="block text-primary">Sink Splash Guard</span>
                 </h1>
                 <p className="text-xl text-muted-foreground mb-8 text-pretty">
-                  Transform your kitchen experience with our innovative splash guard that keeps your counters dry and
-                  your space cleaner.
+                  The ultimate solution for a mess-free washing experience! Keep you and your clothes dry by effectively blocking messy splashes.
                 </p>
                 <div className="flex flex-wrap gap-4">
                   <Button size="lg" className="btn-iridescent text-foreground font-semibold">
-                    Order Now - $14.99
+                    Order Now - $19.99
                   </Button>
                   <DemoVideo>
                     <Button size="lg" variant="outline">

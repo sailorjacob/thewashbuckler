@@ -16,10 +16,10 @@ export function CTA() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center space-y-8">
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-balance">
-            Ready for a Splash-Free Kitchen?
+            Ready to Stay Dry While You Wash?
           </h2>
           <p className="text-xl text-muted-foreground text-pretty">
-            Transform your dishwashing experience with The Washbuckler™.
+            Keep you and your clothes dry with The Washbuckler™. No more soggy shirts or wet aprons!
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
@@ -28,7 +28,7 @@ export function CTA() {
               className="btn-iridescent text-foreground font-semibold text-lg px-8 py-6"
               onClick={handleGetWashbuckler}
             >
-              Get The Washbuckler™ - $14.99
+              Get The Washbuckler™ - $19.99
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
           </div>

@@ -17,24 +17,24 @@ export default function HowItWorksPage() {
     },
     {
       number: "02",
-      title: "Position Inside of Sink, Obviously!",
+      title: "Prepare and Attach",
       description:
-        "Simply place The Washbuckler™ inside your kitchen sink. The flexible design adapts to most sink configurations.",
-      image: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/washbuckler/attaching.jpeg",
+        "Ensure your sink walls are clean and free of debris. Run suction cups under water to moisten, then attach suction cups to the inside of your sink and adjust as needed.",
+      image: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/washbuckler/washingsuctioncups.jpg",
     },
     {
       number: "03",
-      title: "Enjoy Splash-Free Washing",
+      title: "Stay Dry While You Wash!",
       description:
-        "Start washing dishes as normal. The Washbuckler™ catches and redirects water back into the sink, keeping your counters dry.",
+        "Start washing dishes as normal. The Washbuckler™ catches and redirects water back into the sink, keeping you and your clothes dry.",
       image: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/washbuckler/washing.jpeg",
     },
     {
       number: "04",
-      title: "Easy Cleaning & Maintenance",
+      title: "Easy to Clean and Store",
       description:
-        "When needed, simply toss it in the dishwasher or wipe it down. Maintaining your splash guard is effortless.",
-      image: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/washbuckler/washing%20close%20up.jpeg",
+        "When needed, simply toss it in the dishwasher or wipe it down. Store behind faucet or in a drawer when not in use. Maintaining your splash guard is effortless.",
+      image: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/washbuckler/storingindrawer.jpg",
     },
   ]
 
@@ -50,7 +50,7 @@ export default function HowItWorksPage() {
               <span className="block text-primary">Simple. Effective. Brilliant.</span>
             </h1>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto text-pretty">
-              Get started with The Washbuckler™ in seconds. No installation, no hassle, just instant splash protection.
+              Get started with The Washbuckler™ in seconds. Setup is simple! Just instant protection to keep you and your clothes dry.
             </p>
           </div>
         </section>
@@ -83,9 +83,9 @@ export default function HowItWorksPage() {
         {/* CTA */}
         <section className="py-20 bg-muted/30">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-4xl font-bold mb-6">Ready to Transform Your Kitchen?</h2>
+            <h2 className="text-4xl font-bold mb-6">Ready to Stay Dry While You Wash?</h2>
             <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Join thousands of satisfied customers who have said goodbye to messy counters forever.
+              Join thousands of satisfied customers who have said goodbye to soggy clothes and wet aprons forever.
             </p>
             <Button size="lg" className="btn-iridescent text-foreground font-semibold">
               Order Your Washbuckler™ Now

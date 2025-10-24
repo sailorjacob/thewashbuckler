@@ -7,13 +7,13 @@ import { Button } from "@/components/ui/button"
 const features = [
   {
     icon: Droplets,
-    title: "Complete Splash Protection",
-    description: "Blocks 100% of water splashes from reaching your counters and clothes while washing dishes.",
+    title: "Stay Dry While You Wash",
+    description: "Effectively blocks water splashes from reaching you and your clothes while washing dishes.",
   },
   {
     icon: Zap,
-    title: "Installs in Seconds",
-    description: "No tools required. Simply press the suction cups to the inside of your sink and you're ready to go.",
+    title: "Setup is Simple!",
+    description: "Ensure your sink walls are clean and free of debris. Run suction cups under water to moisten, then attach suction cups to the inside of your sink and adjust as needed.",
   },
   {
     icon: Shield,
@@ -27,13 +27,13 @@ const features = [
   },
   {
     icon: Clock,
-    title: "Saves Time & Effort",
-    description: "No more wiping down counters after every dish wash. Keep your kitchen cleaner, longer.",
+    title: "Easy to Clean and Store",
+    description: "Easy to wipe down and maintain. Store behind faucet or in a drawer when not in use.",
   },
   {
     icon: Heart,
-    title: "Universal Fit",
-    description: "Universal and flexible design.",
+    title: "Eco-Friendly Benefits",
+    description: "Keep you and your clothes dry, reducing laundry loads and cleanup time. Less washing means less water and energy use.",
   },
 ]
 
