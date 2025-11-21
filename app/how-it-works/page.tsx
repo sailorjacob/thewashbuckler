@@ -2,6 +2,7 @@ import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
+import Link from "next/link"
 
 // Force dynamic rendering to avoid client component serialization issues
 export const dynamic = 'force-dynamic'
@@ -87,9 +88,11 @@ export default function HowItWorksPage() {
             <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
               Join thousands of satisfied customers who have said goodbye to soggy clothes and wet aprons forever.
             </p>
-            <Button size="lg" className="btn-iridescent text-foreground font-semibold">
-              Order Your Washbuckler™ Now
-            </Button>
+            <Link href="/">
+              <Button size="lg" className="btn-iridescent text-foreground font-semibold">
+                Order Your Washbuckler™ Now
+              </Button>
+            </Link>
           </div>
         </section>
       </main>

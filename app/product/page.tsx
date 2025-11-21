@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button"
 import { Check, Shield, Droplets, Sparkles } from "lucide-react"
 import { SafeImage } from "@/components/ui/safe-image"
 import { DemoVideo } from "@/components/demo-video"
+import Link from "next/link"
 
 // Force dynamic rendering to avoid client component serialization issues
 export const dynamic = 'force-dynamic'
@@ -26,9 +27,11 @@ export default function ProductPage() {
                   The ultimate solution for a mess-free washing experience! Keep you and your clothes dry by effectively blocking messy splashes.
                 </p>
                 <div className="flex flex-wrap gap-4">
-                  <Button size="lg" className="btn-iridescent text-foreground font-semibold">
-                    Order Now - $19.99
-                  </Button>
+                  <Link href="/">
+                    <Button size="lg" className="btn-iridescent text-foreground font-semibold">
+                      Order Now - $1.00
+                    </Button>
+                  </Link>
                   <DemoVideo>
                     <Button size="lg" variant="outline">
                       Watch Demo
