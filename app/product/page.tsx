@@ -29,7 +29,7 @@ export default function ProductPage() {
                 <div className="flex flex-wrap gap-4">
                   <Link href="/">
                     <Button size="lg" className="btn-iridescent text-foreground font-semibold">
-                      Order Now - $1.00
+                      Order Now - $24.99
                     </Button>
                   </Link>
                   <DemoVideo>

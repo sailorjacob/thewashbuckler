@@ -26,6 +26,12 @@ export async function startCheckoutSession(productId: string) {
     const session = await stripe.checkout.sessions.create({
       ui_mode: "embedded",
       redirect_on_completion: "never",
+      shipping_address_collection: {
+        allowed_countries: ['US', 'CA'], // Collect shipping addresses for US and Canada
+      },
+      phone_number_collection: {
+        enabled: true, // Also collect phone number for shipping updates
+      },
       line_items: [
         {
           price_data: {
