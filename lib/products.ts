@@ -13,7 +13,7 @@ export const PRODUCTS: Product[] = [
     name: "The Washbuckler™ - Sink Splash Guard",
     description:
       "The ultimate solution for a mess-free washing experience! Keep you and your clothes dry by effectively blocking messy splashes. Easy installation, premium quality.",
-    priceInCents: 1999, // $19.99
+    priceInCents: 100, // $1.00 - TEST PRICE
     images: [
       "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/washbuckler/product%20shothq.png",
       "/modern-sink-splash-guard-product-shot.jpg",
