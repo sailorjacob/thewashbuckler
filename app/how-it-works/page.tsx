@@ -90,7 +90,7 @@ export default function HowItWorksPage() {
             </p>
             <Link href="/">
               <Button size="lg" className="btn-iridescent text-foreground font-semibold">
-                Order Your Washbuckler™ Now
+                Order Your Washbuckler™ Now - $24.99
               </Button>
             </Link>
           </div>

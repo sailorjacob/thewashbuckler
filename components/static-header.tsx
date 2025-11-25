@@ -41,7 +41,7 @@ export function StaticHeader() {
               Contact
             </a>
             <a href="/product" className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all bg-primary text-primary-foreground hover:bg-primary/90 h-9 px-4 py-2">
-              Buy Now
+              Buy Now - $24.99
             </a>
           </div>
         </div>

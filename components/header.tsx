@@ -60,7 +60,7 @@ export function Header() {
               )}
             </Button>
             <Button size="lg" className="btn-iridescent text-foreground font-semibold" onClick={handleBuyNow}>
-              Buy Now
+              Buy Now - $24.99
             </Button>
           </div>
 
@@ -92,7 +92,7 @@ export function Header() {
               How It Works
             </a>
             <Button size="lg" className="w-full btn-iridescent text-foreground font-semibold" onClick={handleBuyNow}>
-              Buy Now
+              Buy Now - $24.99
             </Button>
           </div>
         )}
