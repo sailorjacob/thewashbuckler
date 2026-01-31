@@ -37,11 +37,11 @@ export async function POST(request: NextRequest) {
       case "checkout.session.completed":
         let session = event.data.object as Stripe.Checkout.Session
         
-        // Expand session to get full shipping details if not present
-        if (!session.shipping_details && session.id) {
+        // Expand session to get full shipping details and shipping rate info
+        if (session.id) {
           try {
             session = await stripe.checkout.sessions.retrieve(session.id, {
-              expand: ['line_items', 'shipping_details']
+              expand: ['line_items', 'shipping_details', 'shipping_cost.shipping_rate']
             })
           } catch (err) {
             console.error("Failed to retrieve expanded session:", err)
@@ -88,13 +88,28 @@ async function handleSuccessfulPayment(session: Stripe.Checkout.Session) {
     const customerName = session.customer_details?.name
     const shippingAddress = session.shipping_details?.address
     const phone = session.customer_details?.phone
+    
+    // Check if this is a local pickup order
+    const shippingOption = session.shipping_cost?.shipping_rate
+    let isLocalPickup = false
+    let shippingMethod = 'Standard Shipping'
+    
+    // The shipping_rate could be a string ID or an expanded object
+    if (typeof shippingOption === 'object' && shippingOption !== null) {
+      const shippingRate = shippingOption as Stripe.ShippingRate
+      shippingMethod = shippingRate.display_name || 'Standard Shipping'
+      isLocalPickup = shippingRate.metadata?.type === 'pickup'
+    }
+    
+    console.log("🚚 Shipping method:", shippingMethod, "| Local pickup:", isLocalPickup)
 
     if (!customerEmail) {
       console.error("❌ No customer email found in session")
       return
     }
 
-    if (!shippingAddress) {
+    // Only require shipping address for non-pickup orders
+    if (!isLocalPickup && !shippingAddress) {
       console.error("❌ No shipping address found in session")
       return
     }
@@ -111,13 +126,15 @@ async function handleSuccessfulPayment(session: Stripe.Checkout.Session) {
       productName,
       quantity,
       amount: session.amount_total || 0,
-      shippingAddress: {
-        line1: shippingAddress.line1,
-        line2: shippingAddress.line2,
-        city: shippingAddress.city,
-        state: shippingAddress.state,
-        postal_code: shippingAddress.postal_code,
-        country: shippingAddress.country,
+      shippingMethod,
+      isLocalPickup,
+      shippingAddress: isLocalPickup ? undefined : {
+        line1: shippingAddress?.line1,
+        line2: shippingAddress?.line2,
+        city: shippingAddress?.city,
+        state: shippingAddress?.state,
+        postal_code: shippingAddress?.postal_code,
+        country: shippingAddress?.country,
       },
       phone: phone || undefined,
     }
@@ -128,6 +145,8 @@ async function handleSuccessfulPayment(session: Stripe.Checkout.Session) {
       customerEmail,
       customerName,
       amount: session.amount_total,
+      shippingMethod,
+      isLocalPickup,
       shippingAddress: orderDetails.shippingAddress,
       phone,
     })

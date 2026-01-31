@@ -32,6 +32,61 @@ export async function startCheckoutSession(productId: string) {
       phone_number_collection: {
         enabled: true, // Also collect phone number for shipping updates
       },
+      shipping_options: [
+        {
+          shipping_rate_data: {
+            type: 'fixed_amount',
+            fixed_amount: {
+              amount: 0,
+              currency: 'usd',
+            },
+            display_name: 'Standard Shipping',
+            delivery_estimate: {
+              minimum: {
+                unit: 'business_day',
+                value: 5,
+              },
+              maximum: {
+                unit: 'business_day',
+                value: 7,
+              },
+            },
+          },
+        },
+        {
+          shipping_rate_data: {
+            type: 'fixed_amount',
+            fixed_amount: {
+              amount: 999, // $9.99 in cents
+              currency: 'usd',
+            },
+            display_name: 'Express Shipping',
+            delivery_estimate: {
+              minimum: {
+                unit: 'business_day',
+                value: 2,
+              },
+              maximum: {
+                unit: 'business_day',
+                value: 3,
+              },
+            },
+          },
+        },
+        {
+          shipping_rate_data: {
+            type: 'fixed_amount',
+            fixed_amount: {
+              amount: 0,
+              currency: 'usd',
+            },
+            display_name: 'Local Pickup',
+            metadata: {
+              type: 'pickup',
+            },
+          },
+        },
+      ],
       line_items: [
         {
           price_data: {

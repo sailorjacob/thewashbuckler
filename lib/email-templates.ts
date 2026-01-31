@@ -7,7 +7,9 @@ interface OrderDetails {
   productName: string
   quantity: number
   amount: number
-  shippingAddress: {
+  shippingMethod?: string
+  isLocalPickup?: boolean
+  shippingAddress?: {
     line1?: string | null
     line2?: string | null
     city?: string | null
@@ -22,7 +24,32 @@ interface OrderDetails {
  * Customer confirmation email template
  */
 export function getCustomerConfirmationEmail(order: OrderDetails): { subject: string; html: string; text: string } {
-  const formattedAddress = formatShippingAddress(order.shippingAddress)
+  const formattedAddress = order.shippingAddress ? formatShippingAddress(order.shippingAddress) : ''
+  const isPickup = order.isLocalPickup
+  
+  const deliverySection = isPickup 
+    ? `
+      <div class="details">
+        <h3>📍 Local Pickup</h3>
+        <p>Your order is ready for pickup! We'll contact you when it's ready.</p>
+        ${order.phone ? `<p><strong>Phone:</strong> ${order.phone}</p>` : ''}
+      </div>
+    `
+    : `
+      <div class="details">
+        <h3>Shipping Address</h3>
+        <p style="white-space: pre-line;">${formattedAddress}</p>
+        ${order.phone ? `<p><strong>Phone:</strong> ${order.phone}</p>` : ''}
+      </div>
+    `
+  
+  const deliveryMessage = isPickup
+    ? `Your order is confirmed and will be ready for pickup soon! We'll contact you when it's ready.`
+    : `Your order has been confirmed and will be shipped soon!`
+  
+  const nextStepsMessage = isPickup
+    ? `We'll send you another email when your order is ready for pickup.`
+    : `We'll send you another email with tracking information once your order ships.`
   
   return {
     subject: `Order Confirmation - ${order.orderCode}`,
@@ -52,7 +79,7 @@ export function getCustomerConfirmationEmail(order: OrderDetails): { subject: st
     
     <div class="content">
       <p>Hi${order.customerName ? ` ${order.customerName}` : ''},</p>
-      <p>Your order has been confirmed and will be shipped soon!</p>
+      <p>${deliveryMessage}</p>
       
       <div class="order-code">
         Order #${order.orderCode}
@@ -69,18 +96,18 @@ export function getCustomerConfirmationEmail(order: OrderDetails): { subject: st
           <span>${order.quantity}</span>
         </div>
         <div class="detail-row">
+          <span class="detail-label">Fulfillment:</span>
+          <span>${order.shippingMethod || 'Standard Shipping'}</span>
+        </div>
+        <div class="detail-row">
           <span class="detail-label">Total:</span>
           <span><strong>${formatPrice(order.amount)}</strong></span>
         </div>
       </div>
       
-      <div class="details">
-        <h3>Shipping Address</h3>
-        <p style="white-space: pre-line;">${formattedAddress}</p>
-        ${order.phone ? `<p><strong>Phone:</strong> ${order.phone}</p>` : ''}
-      </div>
+      ${deliverySection}
       
-      <p>We'll send you another email with tracking information once your order ships.</p>
+      <p>${nextStepsMessage}</p>
       
       <p>Questions? Reply to this email or contact us at support@thewashbuckler.com</p>
     </div>
@@ -98,20 +125,22 @@ Order Confirmation - ${order.orderCode}
 
 Hi${order.customerName ? ` ${order.customerName}` : ''},
 
-Your order has been confirmed and will be shipped soon!
+${deliveryMessage}
 
 Order #${order.orderCode}
 
 ORDER DETAILS:
 - Product: ${order.productName}
 - Quantity: ${order.quantity}
+- Fulfillment: ${order.shippingMethod || 'Standard Shipping'}
 - Total: ${formatPrice(order.amount)}
 
-SHIPPING ADDRESS:
-${formattedAddress}
+${isPickup ? `LOCAL PICKUP:
+Your order will be ready for pickup soon. We'll contact you when it's ready.` : `SHIPPING ADDRESS:
+${formattedAddress}`}
 ${order.phone ? `Phone: ${order.phone}` : ''}
 
-We'll send you another email with tracking information once your order ships.
+${nextStepsMessage}
 
 Questions? Reply to this email or contact us at support@thewashbuckler.com
 
@@ -124,10 +153,29 @@ Questions? Reply to this email or contact us at support@thewashbuckler.com
  * Admin notification email template
  */
 export function getAdminNotificationEmail(order: OrderDetails): { subject: string; html: string; text: string } {
-  const formattedAddress = formatShippingAddress(order.shippingAddress)
+  const formattedAddress = order.shippingAddress ? formatShippingAddress(order.shippingAddress) : ''
+  const isPickup = order.isLocalPickup
+  
+  const actionRequired = isPickup 
+    ? `<strong>📍 LOCAL PICKUP:</strong> Prepare order for customer pickup`
+    : `<strong>⚡ Action Required:</strong> Prepare order for shipment`
+  
+  const fulfillmentSection = isPickup
+    ? `
+      <div class="details">
+        <h3>📍 Local Pickup Order</h3>
+        <p>Customer will pick up this order. Contact them when ready.</p>
+      </div>
+    `
+    : `
+      <div class="details">
+        <h3>Shipping Address</h3>
+        <p style="white-space: pre-line;">${formattedAddress}</p>
+      </div>
+    `
   
   return {
-    subject: `🎉 New Order: ${order.orderCode}`,
+    subject: `🎉 New Order${isPickup ? ' (LOCAL PICKUP)' : ''}: ${order.orderCode}`,
     html: `
 <!DOCTYPE html>
 <html>
@@ -141,7 +189,7 @@ export function getAdminNotificationEmail(order: OrderDetails): { subject: strin
     .details { background: white; padding: 20px; border-radius: 8px; margin: 20px 0; }
     .detail-row { padding: 8px 0; border-bottom: 1px solid #eee; }
     .detail-label { font-weight: bold; color: #666; }
-    .highlight { background: #fef3c7; padding: 15px; border-radius: 8px; margin: 20px 0; }
+    .highlight { background: ${isPickup ? '#dbeafe' : '#fef3c7'}; padding: 15px; border-radius: 8px; margin: 20px 0; }
   </style>
 </head>
 <body>
@@ -156,7 +204,7 @@ export function getAdminNotificationEmail(order: OrderDetails): { subject: strin
       </div>
       
       <div class="highlight">
-        <strong>⚡ Action Required:</strong> Prepare order for shipment
+        ${actionRequired}
       </div>
       
       <div class="details">
@@ -164,6 +212,10 @@ export function getAdminNotificationEmail(order: OrderDetails): { subject: strin
         <div class="detail-row">
           <div class="detail-label">Product</div>
           <div>${order.productName} × ${order.quantity}</div>
+        </div>
+        <div class="detail-row">
+          <div class="detail-label">Fulfillment</div>
+          <div><strong>${order.shippingMethod || 'Standard Shipping'}</strong></div>
         </div>
         <div class="detail-row">
           <div class="detail-label">Amount Paid</div>
@@ -191,10 +243,7 @@ export function getAdminNotificationEmail(order: OrderDetails): { subject: strin
         ` : ''}
       </div>
       
-      <div class="details">
-        <h3>Shipping Address</h3>
-        <p style="white-space: pre-line;">${formattedAddress}</p>
-      </div>
+      ${fulfillmentSection}
       
       <p style="color: #666; font-size: 14px; margin-top: 30px;">
         View full details in your <a href="https://dashboard.stripe.com" style="color: #667eea;">Stripe Dashboard</a>
@@ -209,10 +258,11 @@ NEW ORDER RECEIVED!
 
 Order #${order.orderCode}
 
-⚡ ACTION REQUIRED: Prepare order for shipment
+${isPickup ? '📍 LOCAL PICKUP: Prepare order for customer pickup' : '⚡ ACTION REQUIRED: Prepare order for shipment'}
 
 ORDER DETAILS:
 - Product: ${order.productName} × ${order.quantity}
+- Fulfillment: ${order.shippingMethod || 'Standard Shipping'}
 - Amount Paid: ${formatPrice(order.amount)}
 
 CUSTOMER INFORMATION:
@@ -220,8 +270,9 @@ CUSTOMER INFORMATION:
 ${order.customerName ? `- Name: ${order.customerName}` : ''}
 ${order.phone ? `- Phone: ${order.phone}` : ''}
 
-SHIPPING ADDRESS:
-${formattedAddress}
+${isPickup ? `LOCAL PICKUP ORDER
+Customer will pick up this order. Contact them when ready.` : `SHIPPING ADDRESS:
+${formattedAddress}`}
 
 View full details in your Stripe Dashboard: https://dashboard.stripe.com
     `
